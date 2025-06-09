@@ -1,0 +1,24 @@
+table{
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid black;
+    border-radius: 12px;
+    overflow: hidden; /* This is the key to clipping the cell corners */
+}
+
+th, td{
+    padding: 8px; 
+    border: 1px solid black;
+}
+
+th{
+    background-color:darkslategrey;
+    color: white;
+    text-align: left;
+}
+
+td{
+    text-align: justify;
+    background-color: white;
+    color: black;
+}
