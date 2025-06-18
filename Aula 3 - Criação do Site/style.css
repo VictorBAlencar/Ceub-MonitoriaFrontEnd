@@ -1,24 +1,226 @@
-table{
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid black;
-    border-radius: 12px;
-    overflow: hidden; /* This is the key to clipping the cell corners */
+/*CÓDGIO GERADO POR IA(GEMINI PRO) P/ ESTUDO */
+
+
+:root {  /* classe mais alta */
+    --cor-primaria: #0047AB; /* Azul Cobalto (inspirado na cerâmica de Delft) */
+    --cor-secundaria: #FF7900; /* Laranja Holandês */
+    --cor-texto: #333;
+    --cor-fundo: #f9f9f9;
+    --cor-tabela-cabecalho: #EAEAEA;
+    --cor-borda: #ddd;
+    --sombra-caixa: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-th, td{
-    padding: 8px; 
-    border: 1px solid black;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
-th{
-    background-color:darkslategrey;
-    color: white;
-    text-align: left;
-}
-
-td{
-    text-align: justify;
+/* --- Cabeçalho --- */
+header {
     background-color: white;
-    color: black;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 3px solid var(--cor-secundaria);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .Direções a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+    margin: 0 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header .Direções a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+
+/* --- Conteúdo Principal (Main) --- */
+main {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Seções e Títulos --- */
+.Introdução, .Norte, .Centro, .Oeste, .Sul {
+    margin-bottom: 4rem;
+    scroll-margin-top: 100px; /* Adiciona espaço para o cabeçalho fixo ao navegar */
+}
+
+h1 {
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-bottom: 1rem;
+    font-size: 2.2em;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Tabelas --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: var(--sombra-caixa);
+    background-color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+th {
+    background-color: var(--cor-tabela-cabecalho);
+    font-size: 1.1em;
+    color: var(--cor-primaria);
+}
+
+tr:nth-child(even) {
+    background-color: var(--cor-fundo);
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 5%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+footer hr {
+    display: none;
+}
+
+.Links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.Links a:hover {
+    color: var(--cor-secundaria);
+    text-decoration: underline;
+}
+
+/* --- Formulário de Contato --- */
+.Contato {
+    width: 100%;
+    max-width: 450px;
+}
+
+.Contato form {
+    display: flex;
+    flex-direction: column;
+}
+
+.Contato label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.Contato input[type="text"],
+.Contato input[type="email"],
+.Contato textarea {
+    padding: 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+    width: 95%; /* Ajustado para evitar overflow */
+}
+
+.Contato input[type="text"]:focus,
+.Contato input[type="email"]:focus,
+.Contato textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(0, 71, 171, 0.5);
+}
+
+.Contato textarea {
+    resize: vertical; /* Permite ao usuário redimensionar verticalmente */
+}
+
+.Contato input[type="submit"] {
+    background-color: var(--cor-secundaria);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    width: auto;
+    align-self: flex-start; /* Alinha o botão à esquerda */
+}
+
+.Contato input[type="submit"]:hover {
+    background-color: #e66a00; /* Laranja mais escuro */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    header .Direções {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header .Direções a {
+        margin: 0 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .Contato {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1rem 3%;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    header .Direções a {
+        font-size: 1em;
+    }
 }
