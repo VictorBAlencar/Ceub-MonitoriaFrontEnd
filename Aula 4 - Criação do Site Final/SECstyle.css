@@ -103,6 +103,8 @@ body::after {
     font-size: 1rem;
     margin: 1.5rem 0; 
     text-align: center;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .card .button{
